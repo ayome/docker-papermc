@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir -p papermc
+mkdir -p data
 # shellcheck disable=SC2164
-cd papermc
+cd data
 
 JAR_NAME=papermc-${VERSION}-${BUILD}
 

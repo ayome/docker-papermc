@@ -4,11 +4,11 @@ mkdir -p data
 # shellcheck disable=SC2164
 cd data
 
-JAR_NAME=papermc-${VERSION}-${BUILD}
+JAR_NAME=papermc-${VERSION}
 
-if [ ! -e "${JAR_NAME}".jar ] || [ "${BUILD}" = latest ]
+if [ ! -e "${JAR_NAME}".jar ]
   then
-    wget https://papermc.io/api/v1/paper/"${VERSION}"/"${BUILD}"/download -O "${JAR_NAME}".jar
+    wget https://papermc.io/api/v1/paper/"${VERSION}"/latest/download -O "${JAR_NAME}".jar
     if [ ! -e eula.txt ]
     then
       java -jar "${JAR_NAME}".jar

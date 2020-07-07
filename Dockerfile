@@ -1,7 +1,6 @@
 FROM openjdk:11.0-jre-slim
 
-ENV VERSION="1.15.2" \
-    BUILD="latest"
+ENV VERSION="1.15.2"
 
 ADD paper.sh .
 RUN apt-get update \

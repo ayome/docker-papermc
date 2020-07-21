@@ -1,14 +1,14 @@
 #!/bin/bash
 
-mkdir -p /server/data
-
-cd /server/data
+mkdir -p data
+# shellcheck disable=SC2164
+cd data
 
 JAR_NAME=papermc-${VERSION}
 
 if [ ! -e "${JAR_NAME}".jar ]
   then
-    wget https://papermc.io/api/v1/paper/"${VERSION}"/latest/download -O "../${JAR_NAME}".jar
+    wget https://papermc.io/api/v1/paper/"${VERSION}"/latest/download -O "${JAR_NAME}".jar
     if [ ! -e eula.txt ]
     then
       java -jar "${JAR_NAME}".jar
@@ -16,4 +16,4 @@ if [ ! -e "${JAR_NAME}".jar ]
     fi
 fi
 
-java -server -jar "../${JAR_NAME}".jar nogui
+java -server -jar "${JAR_NAME}".jar nogui

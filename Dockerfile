@@ -11,4 +11,4 @@ CMD ["sh", "./paper.sh"]
 
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
-VOLUME /data
+VOLUME /server/data
